@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Speed Test</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-     <h1>⌨️ Typing Speed Test</h1>
+      <h1>⌨️ Typing Speed Test</h1>
+      <!-- Theme Toggle Button (corner) -->
+    <div class="theme-corner">
+    <button class="theme-toggle-btn" onclick="toggleThemePanel()" title="Change Theme">🎨</button>
+    <div class="theme-panel" id="theme-panel">
+        <button class="theme-btn" onclick="setTheme('dark')">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-name">Dark</span>
+        </button>
+        <button class="theme-btn" onclick="setTheme('light')">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-name">Light</span>
+        </button>
+        <button class="theme-btn" onclick="setTheme('retro')">
+            <span class="theme-icon">💻</span>
+            <span class="theme-name">Retro</span>
+        </button>
+        <button class="theme-btn" onclick="setTheme('ocean')">
+            <span class="theme-icon">🌊</span>
+            <span class="theme-name">Ocean</span>
+        </button>
+        <button class="theme-btn" onclick="setTheme('sunset')">
+            <span class="theme-icon">🌅</span>
+            <span class="theme-name">Sunset</span>
+        </button>
+    </div>
+    </div>
   </header>
   <main>
       {% block content %}{% endblock %}
   </main>
+  <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
   <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
   <script src="{{ url_for('static', filename='js/highlighter.js') }}"></script>
   <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
